@@ -3,123 +3,178 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>InsightX Lab Login</title>
-  <script src="https://www.gstatic.com/firebasejs/10.3.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.3.0/firebase-auth.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <title>Quantum Edge - InsightX Labs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
     body {
-      font-family: 'Inter', sans-serif;
-      background: #f4f6f8;
       margin: 0;
-      padding: 0;
+      font-family: 'Inter', sans-serif;
+      background: #f3f4f6;
+      color: #111827;
+    }
+
+    header {
+      background: #1f2937;
+      color: white;
+      padding: 20px 40px;
       text-align: center;
     }
 
-    .container {
-      max-width: 600px;
-      margin: 100px auto;
-      background: #fff;
-      padding: 40px;
-      border-radius: 15px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
     }
 
-    h1 {
-      font-size: 28px;
-      margin-bottom: 20px;
+    .subheader {
+      font-size: 1.1rem;
+      margin-top: 8px;
+      color: #9ca3af;
     }
 
-    #googleLoginBtn {
-      background-color: #4285F4;
+    .hero {
+      padding: 60px 20px;
+      text-align: center;
+      background: linear-gradient(to right, #3b82f6, #9333ea);
       color: white;
+    }
+
+    .hero h2 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto 30px;
+    }
+
+    .login-btn {
+      padding: 14px 28px;
+      font-size: 1rem;
+      font-weight: bold;
+      background: white;
+      color: #111827;
       border: none;
-      padding: 12px 20px;
-      font-size: 16px;
       border-radius: 8px;
       cursor: pointer;
-      margin-bottom: 30px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
 
-    #labSection {
-      display: none;
-      margin-top: 30px;
-    }
-
-    .lab-grid {
+    .audiences {
+      padding: 40px 20px;
+      max-width: 1100px;
+      margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 15px;
-      margin-top: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
     }
 
-    .lab-card {
-      background-color: #e9ecef;
-      padding: 20px;
-      border-radius: 10px;
-      font-weight: 600;
+    .card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+      padding: 30px 20px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      font-size: 1.4rem;
+      color: #2563eb;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #4b5563;
+    }
+
+    .select-lab {
+      margin-top: 50px;
+      text-align: center;
+    }
+
+    .select-btn {
+      padding: 12px 24px;
+      font-size: 1rem;
+      background-color: #10b981;
+      color: white;
+      border: none;
+      border-radius: 8px;
       cursor: pointer;
-      transition: 0.3s;
     }
 
-    .lab-card:hover {
-      background-color: #dee2e6;
+    .select-btn:hover {
+      background-color: #059669;
+    }
+
+    footer {
+      margin-top: 60px;
+      padding: 20px;
+      background: #111827;
+      color: #9ca3af;
+      text-align: center;
+    }
+
+    @media screen and (max-width: 500px) {
+      .hero h2 {
+        font-size: 1.6rem;
+      }
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <h1>Welcome to InsightX Labs</h1>
-    <p>Please log in with Google to continue</p>
-    <button id="googleLoginBtn">Login with Google</button>
+  <header>
+    <h1>Quantum Edge</h1>
+    <div class="subheader">Powered by InsightX Labs</div>
+  </header>
 
-    <div id="labSection">
-      <h2>Select Your Lab</h2>
-      <div class="lab-grid">
-        <div class="lab-card" onclick="enterLab('AI in Marketing')">AI in Marketing</div>
-        <div class="lab-card" onclick="enterLab('No Code Tools')">No Code Tools</div>
-        <div class="lab-card" onclick="enterLab('ML in Business')">ML in Business</div>
-        <div class="lab-card" onclick="enterLab('Growth Marketing')">Growth Marketing</div>
-      </div>
+  <section class="hero">
+    <h2>Welcome to the Future of Smart Learning</h2>
+    <p>Quantum Edge is your AI-driven learning lab where students, professionals, founders, and educators build real-world projects, day-by-day, with intelligent support.</p>
+    <button class="login-btn" onclick="googleLogin()">Login with Google</button>
+  </section>
+
+  <section class="audiences">
+    <div class="card">
+      <h3>👩‍🎓 Students</h3>
+      <p>Hands-on AI and tech labs that boost your portfolio and skills. Learn by doing, guided by AI.</p>
     </div>
+    <div class="card">
+      <h3>💼 Professionals</h3>
+      <p>Master AI tools to automate tasks and grow in your career with real business cases and no-code labs.</p>
+    </div>
+    <div class="card">
+      <h3>🚀 Founders</h3>
+      <p>Use AI to build MVPs faster, automate growth, and validate ideas through data-driven labs.</p>
+    </div>
+    <div class="card">
+      <h3>📚 Educators</h3>
+      <p>Get lab-ready modules, AI evaluation tools, and content engines to guide your learners effectively.</p>
+    </div>
+  </section>
+
+  <div class="select-lab">
+    <h2>Ready to Begin?</h2>
+    <p>Click below to explore and select your personalized lab experience.</p>
+    <button class="select-btn" onclick="location.href='select-lab.html'">Select Your Lab</button>
   </div>
 
+  <footer>
+    © 2025 InsightX Labs. All rights reserved.
+  </footer>
+
   <script>
-    // Your Firebase config here
-    const firebaseConfig = {
-      apiKey: "AIzaSyAN6KT706rOwFVt7toKtzmIAvs0bpckJ6Y",
-      authDomain: "insightx-dcba0.firebaseapp.com",
-      projectId: "insightx-dcba0",
-      appId: "1:741753834351:web:c19486a9e5003b7b87b69a"
-    };
-
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    const auth = firebase.auth();
-
-    const loginBtn = document.getElementById('googleLoginBtn');
-    const labSection = document.getElementById('labSection');
-
-    loginBtn.addEventListener('click', () => {
-      const provider = new firebase.auth.GoogleAuthProvider();
-      auth.signInWithPopup(provider)
-        .then(result => {
-          const user = result.user;
-          alert(`Welcome, ${user.displayName}!`);
-          loginBtn.style.display = 'none';
-          labSection.style.display = 'block';
-        })
-        .catch(error => {
-          console.error("Login error:", error);
-          alert("Login failed. Try again.");
-        });
-    });
-
-    function enterLab(labName) {
-      alert(`Entering ${labName} Lab...`);
-      // You can redirect based on lab name
-      window.location.href = `labs/${labName.replace(/\s+/g, '-').toLowerCase()}.html`;
+    function googleLogin() {
+      // Placeholder for actual Google Login integration
+      alert("Redirecting to Google login...");
+      window.location.href = "select-lab.html"; // Simulated post-login page
     }
   </script>
 
