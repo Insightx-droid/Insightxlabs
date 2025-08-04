@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Select Your Lab – Quantum Edge</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f3f4f6;
+      color: #1f2937;
+    }
+
+    header {
+      background-color: #1f2937;
+      padding: 20px 40px;
+      color: white;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .intro h2 {
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+    }
+
+    .labs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+
+    .lab-card {
+      background: white;
+      border-radius: 14px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      padding: 24px;
+      text-align: center;
+      transition: transform 0.2s ease;
+      cursor: pointer;
+    }
+
+    .lab-card:hover {
+      transform: translateY(-6px);
+      background-color: #eef2ff;
+    }
+
+    .lab-card h3 {
+      margin: 16px 0 8px;
+      font-size: 1.2rem;
+      color: #2563eb;
+    }
+
+    .lab-card p {
+      font-size: 0.95rem;
+      color: #4b5563;
+    }
+
+    .icon {
+      font-size: 2.5rem;
+    }
+
+    .footer-buttons {
+      margin-top: 50px;
+      text-align: center;
+    }
+
+    .footer-buttons button {
+      background-color: #3b82f6;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .footer-buttons button:hover {
+      background-color: #2563eb;
+    }
+
+    @media screen and (max-width: 500px) {
+      .intro h2 {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Quantum Edge: Select Your Lab</h1>
+  </header>
+
+  <div class="container">
+    <div class="intro">
+      <h2>Welcome! Choose a Lab to Begin</h2>
+      <p>Select from the available smart learning labs tailored for your journey.</p>
+    </div>
+
+    <div class="labs-grid">
+      <div class="lab-card" onclick="goToLab('ai-marketing')">
+        <div class="icon">📢</div>
+        <h3>AI in Marketing</h3>
+        <p>Use GPT tools to build automated campaigns, generate leads, and personalize content.</p>
+      </div>
+
+      <div class="lab-card" onclick="goToLab('no-code-tools')">
+        <div class="icon">🔧</div>
+        <h3>No-Code Tools</h3>
+        <p>Learn automation with Zapier, Airtable, Notion AI, and build MVPs with zero code.</p>
+      </div>
+
+      <div class="lab-card" onclick="goToLab('ml-business')">
+        <div class="icon">📈</div>
+        <h3>ML in Business</h3>
+        <p>Work on churn prediction, sales forecasting, customer segmentation, and analytics.</p>
+      </div>
+
+      <div class="lab-card" onclick="goToLab('growth-marketing')">
+        <div class="icon">🚀</div>
+        <h3>Growth Marketing</h3>
+        <p>Explore viral loops, AI-enhanced funnels, content ops, and lead scoring with AI.</p>
+      </div>
+    </div>
+
+    <div class="footer-buttons">
+      <button onclick="window.location.href='quantum-edge.html'">⬅ Back to Home</button>
+    </div>
+  </div>
+
+  <script>
+    function goToLab(labId) {
+      // Simulate navigation to the lab page
+      // In actual implementation, map labId to lab file (e.g., ai-marketing.html)
+      alert("Redirecting to lab: " + labId);
+      window.location.href = labId + ".html";
+    }
+  </script>
+
+</body>
+</html>
