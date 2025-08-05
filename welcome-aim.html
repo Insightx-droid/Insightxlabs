@@ -160,7 +160,7 @@
     const container = document.getElementById(containerId);
     for (let i = 1; i <= 12; i++) {
       const roleLower = role.toLowerCase();
-      const link = `projects/${roleLower}/project${i}.html`;
+      const link = `${roleLower}-project${i}.html`;
 
       const card = document.createElement('a');
       card.href = link;
