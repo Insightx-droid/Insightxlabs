@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AI in Marketing Lab - Student Project 1</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f9fafb;
+      margin: 0;
+      padding: 20px;
+      color: #111827;
+    }
+
+    header {
+      background: #1e3a8a;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      color: #1d4ed8;
+      font-size: 1.3rem;
+    }
+
+    .section {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 20px;
+      margin-top: 20px;
+      box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+    }
+
+    .locked {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    .complete-btn {
+      background: #2563eb;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+
+    .complete-btn:hover {
+      background: #1e40af;
+    }
+
+    .completed-msg {
+      color: green;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Student Project 1</h1>
+  <p><strong>Title:</strong> AI-Powered Social Media Post Generator</p>
+</header>
+
+<section class="section">
+  <h2>📘 Introduction</h2>
+  <p>
+    In this project, you will build an AI-powered tool that generates engaging social media posts automatically using GPT-like models. This type of tool helps marketing teams save time by creating captions, headlines, or even full posts based on the product or campaign details.
+  </p>
+  <p>
+    You will work on the project step-by-step across 5 days — from concept and design to prototype and testing. At the end, you will have a working version of a content generator for platforms like Instagram, LinkedIn, or Facebook.
+  </p>
+</section>
+
+<!-- Day 1 -->
+<section class="section" id="day1">
+  <h2>🗓️ Day 1: Define Content Types and Audience</h2>
+  <ul>
+    <li>Understand the types of posts (educational, promotional, announcement, testimonial).</li>
+    <li>Identify your target audience (age, industry, interests).</li>
+    <li>List 3 example products and the kind of content they need.</li>
+  </ul>
+  <button class="complete-btn" onclick="markComplete(1)">Mark Day 1 as Completed</button>
+  <div id="done1" class="completed-msg" style="display: none;">✅ Day 1 Completed</div>
+</section>
+
+<!-- Day 2 -->
+<section class="section locked" id="day2">
+  <h2>🗓️ Day 2: Design Prompt Templates for AI</h2>
+  <ul>
+    <li>Create 3 prompt templates for generating posts. Example: "Write a short promotional Instagram caption for a [product] targeted at [audience]."</li>
+    <li>Test your prompts using ChatGPT or similar AI tool.</li>
+    <li>Refine the outputs for tone, clarity, and engagement.</li>
+  </ul>
+  <button class="complete-btn" onclick="markComplete(2)">Mark Day 2 as Completed</button>
+  <div id="done2" class="completed-msg" style="display: none;">✅ Day 2 Completed</div>
+</section>
+
+<!-- Day 3 -->
+<section class="section locked" id="day3">
+  <h2>🗓️ Day 3: Build the Post Generator UI</h2>
+  <ul>
+    <li>Use HTML/CSS to design a simple form for the user to input product and audience.</li>
+    <li>Connect the form to your AI tool (if available) or simulate with JavaScript.</li>
+    <li>Display the generated post on the page.</li>
+  </ul>
+  <button class="complete-btn" onclick="markComplete(3)">Mark Day 3 as Completed</button>
+  <div id="done3" class="completed-msg" style="display: none;">✅ Day 3 Completed</div>
+</section>
+
+<!-- Day 4 -->
+<section class="section locked" id="day4">
+  <h2>🗓️ Day 4: Improve and Add Personalization</h2>
+  <ul>
+    <li>Allow user to select tone (funny, serious, inspirational).</li>
+    <li>Let users pick a platform (LinkedIn, Instagram, etc.).</li>
+    <li>Adapt the prompt to generate platform-specific posts.</li>
+  </ul>
+  <button class="complete-btn" onclick="markComplete(4)">Mark Day 4 as Completed</button>
+  <div id="done4" class="completed-msg" style="display: none;">✅ Day 4 Completed</div>
+</section>
+
+<!-- Day 5 -->
+<section class="section locked" id="day5">
+  <h2>🗓️ Day 5: Testing and Demo</h2>
+  <ul>
+    <li>Test your tool with 3 different products and platforms.</li>
+    <li>Collect feedback from 2 peers or mentors.</li>
+    <li>Create a 2-minute video or PDF demo explaining your project.</li>
+  </ul>
+  <button class="complete-btn" onclick="markComplete(5)">Mark Day 5 as Completed</button>
+  <div id="done5" class="completed-msg" style="display: none;">✅ Day 5 Completed</div>
+</section>
+
+<script>
+  function markComplete(day) {
+    localStorage.setItem('student_project1_day' + day, 'done');
+    document.getElementById('done' + day).style.display = 'block';
+
+    const nextDay = day + 1;
+    const nextSection = document.getElementById('day' + nextDay);
+    if (nextSection) {
+      nextSection.classList.remove('locked');
+    }
+  }
+
+  // On page load: unlock based on progress
+  window.onload = function () {
+    for (let i = 1; i <= 5; i++) {
+      if (localStorage.getItem('student_project1_day' + i) === 'done') {
+        document.getElementById('done' + i).style.display = 'block';
+        const next = document.getElementById('day' + (i + 1));
+        if (next) next.classList.remove('locked');
+      }
+    }
+  };
+</script>
+
+</body>
+</html>
