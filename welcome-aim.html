@@ -2,173 +2,182 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>AI in Marketing Lab - Welcome</title>
+  <title>Welcome to AI in Marketing Lab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
-      margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: #f4f7fc;
-      color: #333;
+      margin: 0;
+      background: #f9fafb;
+      color: #111827;
     }
 
     header {
-      background: #1e3a8a;
+      background-color: #1e3a8a;
       color: white;
-      padding: 30px 20px;
+      padding: 30px;
       text-align: center;
     }
 
-    header h1 {
+    h1 {
       margin: 0;
-      font-size: 2.5em;
+      font-size: 2.5rem;
     }
 
-    .container {
+    section {
       max-width: 1200px;
-      margin: auto;
-      padding: 20px;
+      margin: 30px auto;
+      padding: 0 20px;
     }
 
     h2 {
-      color: #1e3a8a;
+      color: #1e40af;
       margin-top: 40px;
+      font-size: 1.8rem;
     }
 
-    p {
-      font-size: 1.1em;
-      line-height: 1.6em;
+    p, li {
+      font-size: 1rem;
+      line-height: 1.6;
     }
 
-    .projects-grid {
+    ul {
+      margin-top: 10px;
+    }
+
+    .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 20px;
-      margin-top: 20px;
+      margin-top: 30px;
     }
 
     .card {
       background: white;
+      border: 1px solid #e5e7eb;
       padding: 20px;
       border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-      transition: 0.3s;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+      transition: transform 0.2s;
+      text-decoration: none;
+      color: inherit;
+      display: block;
     }
 
     .card:hover {
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      transform: translateY(-3px);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
 
     .card h3 {
-      margin-top: 0;
-      font-size: 1.2em;
-      color: #1e3a8a;
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: #111827;
     }
 
-    .start-btn {
+    .card p {
+      font-size: 0.95rem;
+      margin-bottom: 12px;
+      color: #374151;
+    }
+
+    .card .btn {
+      background-color: #2563eb;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      font-size: 0.95rem;
+      border-radius: 6px;
       display: inline-block;
       margin-top: 10px;
-      background: #2563eb;
-      color: white;
-      padding: 10px 16px;
-      border: none;
-      border-radius: 6px;
-      text-decoration: none;
-      font-size: 0.95em;
-      transition: 0.3s;
+      transition: background-color 0.3s;
     }
 
-    .start-btn:hover {
-      background: #1d4ed8;
+    .card .btn:hover {
+      background-color: #1e40af;
     }
 
     footer {
-      margin: 50px auto;
       text-align: center;
-      color: #999;
+      padding: 20px;
+      background: #f3f4f6;
+      color: #6b7280;
+      font-size: 0.9rem;
+      margin-top: 60px;
+    }
+
+    .category-label {
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: #1e3a8a;
+      margin-top: 30px;
+      margin-bottom: 10px;
+      border-bottom: 2px solid #e5e7eb;
+      padding-bottom: 5px;
     }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>Welcome to the AI in Marketing Lab</h1>
-  <p>Explore and learn through practical, AI-driven marketing projects</p>
+  <h1>Welcome to AI in Marketing Lab</h1>
+  <p>Explore. Learn. Build the Future with AI.</p>
 </header>
 
-<div class="container">
+<section>
+  <h2>📘 About the Lab</h2>
+  <p>The AI in Marketing Lab is a real-world, project-based experience where you will explore how artificial intelligence is transforming modern marketing. This lab is designed to help you implement AI tools across different domains like content generation, customer segmentation, ad automation, and customer journey mapping.</p>
 
-  <h2>About the Lab</h2>
-  <p>
-    The AI in Marketing Lab is designed to equip learners from all backgrounds with hands-on experience in applying Artificial Intelligence tools and techniques to solve real-world marketing problems. Whether you're a student, professional, founder, or educator, you'll find projects tailored to your goals, experience level, and context.
-  </p>
+  <h2>🧪 Lab Instructions</h2>
+  <ul>
+    <li>Each participant will be assigned projects based on their role (Student, Professional, Founder, Educator).</li>
+    <li>Projects are divided across different difficulty levels and application areas.</li>
+    <li>Progress should be tracked daily through the provided tracker or dashboard.</li>
+    <li>You are encouraged to collaborate and ask questions to improve your outcomes.</li>
+    <li>Each project includes a real-world AI marketing problem with tools and goals.</li>
+  </ul>
 
-  <h2>Lab Instructions</h2>
-  <p>
-    ➤ Each segment contains 12 hands-on projects.<br>
-    ➤ Click on "Start Project" to begin — you'll be redirected to a detailed project workspace.<br>
-    ➤ Update your daily progress through the dashboard or progress tracker.<br>
-    ➤ Use the AI Assistant for help whenever needed.<br>
-    ➤ Make sure to complete the project in the given time and upload your results if applicable.
-  </p>
+  <!-- Project Cards -->
+  <div class="category-label">🎓 Students Projects (1 - 12)</div>
+  <div class="grid" id="student-projects"></div>
 
-  <!-- STUDENTS -->
-  <h2>Projects for Students</h2>
-  <div class="projects-grid">
-    <!-- Generate 12 cards for Students -->
-    ${[...Array(12).keys()].map(i => `
-      <div class="card">
-        <h3>Student Project ${i + 1}</h3>
-        <p>AI project tailored for student learning and exploration.</p>
-        <a href="project.html?id=student-${i + 1}" class="start-btn">Start Project</a>
-      </div>
-    `).join('')}
-  </div>
+  <div class="category-label">💼 Professionals Projects (1 - 12)</div>
+  <div class="grid" id="professional-projects"></div>
 
-  <!-- PROFESSIONALS -->
-  <h2>Projects for Professionals</h2>
-  <div class="projects-grid">
-    ${[...Array(12).keys()].map(i => `
-      <div class="card">
-        <h3>Professional Project ${i + 1}</h3>
-        <p>Project designed for skill enhancement in AI marketing automation.</p>
-        <a href="project.html?id=professional-${i + 1}" class="start-btn">Start Project</a>
-      </div>
-    `).join('')}
-  </div>
+  <div class="category-label">🚀 Founders Projects (1 - 12)</div>
+  <div class="grid" id="founder-projects"></div>
 
-  <!-- FOUNDERS -->
-  <h2>Projects for Founders</h2>
-  <div class="projects-grid">
-    ${[...Array(12).keys()].map(i => `
-      <div class="card">
-        <h3>Founder Project ${i + 1}</h3>
-        <p>Build strategic AI tools to grow and scale your startup marketing.</p>
-        <a href="project.html?id=founder-${i + 1}" class="start-btn">Start Project</a>
-      </div>
-    `).join('')}
-  </div>
+  <div class="category-label">👩‍🏫 Educators Projects (1 - 12)</div>
+  <div class="grid" id="educator-projects"></div>
+</section>
 
-  <!-- EDUCATORS -->
-  <h2>Projects for Educators</h2>
-  <div class="projects-grid">
-    ${[...Array(12).keys()].map(i => `
-      <div class="card">
-        <h3>Educator Project ${i + 1}</h3>
-        <p>Create, curate, and deliver AI content for your classroom or research.</p>
-        <a href="project.html?id=educator-${i + 1}" class="start-btn">Start Project</a>
-      </div>
-    `).join('')}
-  </div>
-
-  <footer>
-    InsightX Quantum Edge | AI in Marketing Lab © 2025
-  </footer>
-
-</div>
+<footer>
+  InsightX Quantum Edge Platform | AI in Marketing Lab © 2025
+</footer>
 
 <script>
-  // Inject HTML cards (for Node/EJS or modern setups use this)
-  document.body.innerHTML = document.body.innerHTML.replace(/\$\{.*?\}/gs, eval)
+  function generateProjectCards(role, containerId) {
+    const container = document.getElementById(containerId);
+    for (let i = 1; i <= 12; i++) {
+      const roleLower = role.toLowerCase();
+      const link = `projects/${roleLower}/project${i}.html`;
+
+      const card = document.createElement('a');
+      card.href = link;
+      card.className = 'card';
+      card.innerHTML = `
+        <h3>${role} - Project ${i}</h3>
+        <p>This project focuses on a specific AI Marketing challenge tailored for ${role.toLowerCase()}s.</p>
+        <span class="btn">Let's build future together</span>
+      `;
+      container.appendChild(card);
+    }
+  }
+
+  generateProjectCards("Student", "student-projects");
+  generateProjectCards("Professional", "professional-projects");
+  generateProjectCards("Founder", "founder-projects");
+  generateProjectCards("Educator", "educator-projects");
 </script>
 
 </body>
